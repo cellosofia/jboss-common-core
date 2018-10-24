@@ -22,6 +22,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.jboss.virtual.plugins.context.VfsArchiveBrowserFactory;
+
 /**
  * Comment
  *
@@ -45,6 +47,7 @@ public abstract class ArchiveBrowser
    {
       factoryFinder.put("file", new FileProtocolArchiveBrowserFactory());
       factoryFinder.put("jar", new JarProtocolArchiveBrowserFactory());
+      factoryFinder.put("vfs", new VfsArchiveBrowserFactory());
    }
 
    public static Iterator getBrowser(URL url, Filter filter)
